@@ -1,0 +1,48 @@
+repo: 'using-css-variables'
+canvasCourse: 'web-dev-4'
+
+inherit:
+  - naming-restrict-live
+  - git-2
+  - html
+  - css
+  - css-order-modules-grid-type-main
+  - google-fonts
+  - screenshots-all
+  - modulifier
+  - typografier
+
+html:
+  - path: 'index.html'
+    outline: false
+    has:
+      - 'div.card.chop > img[src*="placehold"].img-flex + div.island > h2.card-title.push-0.peta + p + a.btn'
+    search:
+      - 'Giant robots'
+      - 'Smashing, crashing, bashing all,<br>Giant robots have real gall.'
+      - 'Destroy!'
+
+css:
+  - path: 'css/main.css'
+    has:
+      - [':root', '--font-primary', 'sans-serif']
+      - [':root', '--color-primary', '#f39']
+      - [':root', '--border-radius', '14px 0 14px 0']
+      - [':root', '--font-secondary', '"Roboto Slab", sans-serif']
+      - ['html', 'font-family', 'var(--font-primary)']
+      - ['.card', 'border-radius', 'var(--border-radius)']
+      - ['.card-title', 'color', 'var(--color-primary)']
+      - ['.btn', 'background-color', 'var(--color-primary)']
+      - ['.btn', 'font-family', 'var(--font-secondary)']
+
+functionality:
+  - path: 'index.html'
+    tests:
+      - |
+        let link = $('.btn');
+        let oldBg = css(link).backgroundColor;
+
+        hover(link, function () {
+          if (css(link).backgroundColor == oldBg) return fail('The background colour of the button doesn’t change when hovered');
+          pass();
+        });
