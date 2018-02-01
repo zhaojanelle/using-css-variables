@@ -1,3 +1,8 @@
+:root {
+  --color-primary: red;
+  --border-radius: 4px;
+}
+
 html {
   font-family: sans-serif;
 }
@@ -5,6 +10,16 @@ html {
 .card {
   max-width: 24em;
 
-  border: 3px solid red;
-  border-radius: 4px;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+.card-title {
+  color: var(--color-primary);
+}
+
+.btn {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: var(--border-radius);
 }
