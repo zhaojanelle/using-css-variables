@@ -1,6 +1,6 @@
 :root {
-  --color-primary: red;
-  --border-radius: 4px;
+  --color-primary: #f39;
+  --border-radius: 14px 0 14px 0;
   --font-primary: sans-serif;
   --font-secondary: "Roboto Slab", sans-serif;
 }
